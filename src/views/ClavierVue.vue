@@ -38,7 +38,7 @@ import FormNumpad from '@/components/FormNumpad.vue'
       return {
           name: '',
           number: '',
-          Calltest: {
+          Call: {
             name: '',
             number: '',
             dateTime: null,
@@ -58,13 +58,13 @@ import FormNumpad from '@/components/FormNumpad.vue'
               var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
               var time = today.getHours() + "h" + today.getMinutes()
             
-              this.Calltest = {
+              this.Call = {
                 name: this.name,
                 number: this.number,
                 dateTime: 'le ' + date + ' à ' + time
               }
-              console.log(this.Calltest)
-              this.$store.commit("call", this.Calltest)
+              console.log(this.Call)
+              this.$store.commit("call", this.Call)
           }
       },
   }
