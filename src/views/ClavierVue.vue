@@ -38,7 +38,7 @@ import FormNumpad from '@/components/FormNumpad.vue'
       return {
           name: '',
           number: '',
-          Call: {
+          Calltest: {
             name: '',
             number: '',
             dateTime: null,
@@ -47,25 +47,24 @@ import FormNumpad from '@/components/FormNumpad.vue'
     },
     methods: {
         call(compteur) {
-            if(compteur.length < 11) {
-              if (this.contacts.find(contact => compteur == contact.number)) {
-                this.name = this.contacts.find(contact => contact.name).name
-                this.number = this.contacts.find(contact => contact.name).number
+              if (this.contacts.find(contact => compteur == contact.number )) {
+                this.name = this.contacts.find(contact => compteur == contact.number).name
+                this.number = this.contacts.find(contact => compteur == contact.number).number
               } else {
                 this.number = compteur
               }
+
               const today = new Date();
               var date = today.getDate()+'/'+(today.getMonth()+1)+'/'+today.getFullYear();
               var time = today.getHours() + "h" + today.getMinutes()
             
-              this.Call = {
+              this.Calltest = {
                 name: this.name,
                 number: this.number,
                 dateTime: 'le ' + date + ' à ' + time
               }
-              console.log(this.Call)
-              this.$store.commit("call", this.Call)
-            }
+              console.log(this.Calltest)
+              this.$store.commit("call", this.Calltest)
           }
       },
   }

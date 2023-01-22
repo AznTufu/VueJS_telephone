@@ -9,7 +9,9 @@
         <button @:click="ajoutNumbers" value="7">7</button>
         <button @:click="ajoutNumbers" value="8">8</button>
         <button @:click="ajoutNumbers" value="9">9</button>
+        <button @:click="ajoutNumbers" value="*">*</button>
         <button @:click="ajoutNumbers" value="0">0</button>
+        <button @:click="ajoutNumbers" value="#">#</button>
     </div>
 </template>
   
@@ -37,7 +39,7 @@
     div{
         display: grid;
         grid-template-columns: repeat(3,1fr);
-        width: 400px;
+        width: 350px;
         height: 250px;
         gap: 10px;
     }
