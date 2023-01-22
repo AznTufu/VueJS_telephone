@@ -1,12 +1,26 @@
 <template>
   <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/">Journal</router-link> |
+    <router-link to="/Contact">Contact</router-link> |
+    <router-link to="/Clavier">Clavier</router-link>
   </nav>
-  <router-view/>
+  <div class="router-view">
+    <div class="test">    <router-view/></div>
+  </div>
 </template>
 
+<script>
+
+  export default {
+    name:'App'
+  }
+  
+</script>
+
 <style>
+html {
+  background-color: #f3f3f3;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,5 +40,16 @@ nav a {
 
 nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.router-view{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.test {
+  max-width: 1600px;
+
 }
 </style>
