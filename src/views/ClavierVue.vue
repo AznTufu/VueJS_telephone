@@ -1,13 +1,12 @@
 <template>
   <section class="box">
   <h1> {{ compteur }} </h1>
-  <div v-if=" compteur.length < 10">Inconnu</div>
+  <div v-if="inconnu">Inconnu</div>
   <div v-else>
     <div v-for="contact in contacts" :key="contact.name">
       <div v-if="contact.number == compteur">
           <p> {{ contact.name }}</p>
       </div>
-      <!-- <div v-else>inconnu</div> -->
     </div>
   </div>
 <div class="num">
@@ -36,6 +35,7 @@ import FormNumpad from '@/components/FormNumpad.vue'
     },    
     data() {
       return {
+          inconnu: true,
           name: '',
           number: '',
           Call: {
@@ -47,11 +47,14 @@ import FormNumpad from '@/components/FormNumpad.vue'
     },
     methods: {
         call(compteur) {
+            
               if (this.contacts.find(contact => compteur == contact.number )) {
                 this.name = this.contacts.find(contact => compteur == contact.number).name
                 this.number = this.contacts.find(contact => compteur == contact.number).number
+                this.inconnu = false
               } else {
                 this.number = compteur
+                this.inconnu = true
               }
 
               const today = new Date();
